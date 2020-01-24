@@ -1,1 +1,20 @@
 
+.ng-resizable-se{
+    border-bottom: 12px solid #4581b6;
+    border-left: 12px solid transparent;
+}
+
+.ng-resizable-sw{
+    border-bottom: 12px solid #4581b6;
+    border-right: 12px solid transparent;
+}
+
+.ng-resizable-ne{
+    border-top: 12px solid #4581b6;
+    border-left: 12px solid transparent;
+}
+
+.ng-resizable-nw{
+    border-top: 12px solid #4581b6;
+    border-right: 12px solid transparent;
+}

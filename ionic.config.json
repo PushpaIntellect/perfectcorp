@@ -1,5 +1,7 @@
 {
   "name": "perfectcorp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

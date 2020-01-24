@@ -8,6 +8,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DragulaModule } from 'ng2-dragula';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularDraggableModule } from 'angular2-draggable';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,11 +20,16 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    DragulaModule.forRoot(),
+    BrowserAnimationsModule,
+    AngularDraggableModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
+    AndroidPermissions,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

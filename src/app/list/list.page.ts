@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-list',
@@ -6,34 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['list.page.scss']
 })
 export class ListPage implements OnInit {
-  private selectedItem: any;
-  private icons = [
-    'flask',
-    'wifi',
-    'beer',
-    'football',
-    'basketball',
-    'paper-plane',
-    'american-football',
-    'boat',
-    'bluetooth',
-    'build'
-  ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+  selectedImage: any;
+  selectedImage1: any;
+  constructor( private toastController: ToastController) {
+
   }
 
   ngOnInit() {
   }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/list', JSON.stringify(item)]);
-  // }
+
+  selectItem (imageLink, type) {
+    console.log('type', type);
+   // document.getElementById("selectedImage").src = imageLink;
+    if (type === 'top') {
+    this.selectedImage = imageLink;
+   } else {
+    this.selectedImage1 = imageLink;
+   }
+    console.log('this.selectedImage', this.selectedImage);
+    console.log('this.selectedImage1', this.selectedImage1);
+  }
+  onResizeStart(event) {
+      console.log('onResizeStart', event);
+  }
+  onResizing(event) {
+    console.log('onResizing', event);
+  }
 }

@@ -8,20 +8,77 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!-- 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-img src="/assets/img/image2.png"></ion-img>
+        </ion-col>
+
+        <ion-col>
+          <ion-img src="/assets/img/image3.png"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content> -->
+  
+<ion-content>
+
+ <!--    <div ngResizable [rzHandles]="'n,e,s,w,se,sw,ne,nw'"
+    (rzStart)="onResizeStart($event)"
+    (rzResizing)="onResizing($event)"
+    (rzStop)="onResizeStop($event)" style="width: 80%; height:100px; border:3px solid green;">
+    Resizable
+  </div> -->
+
+  
+  <!--  <div ngResizable  style="width: 80%; height:100px; border:3px solid green;">
+Drag Me
+  </div> -->
+
+ <!--  <div ngResizable ngDraggable><ion-img  src="/assets/img/image3.png"></ion-img></div> -->
+
+ <div>
+      <ion-img src="/assets/img/model.png" ></ion-img>
+      <div id="resizemove" style="position: absolute;top: 0;width: 100%;height: 71%;background: none;z-index: 999;">
+        <div ngResizable ngDraggable [rzHandles]="'n,e,s,w,se,sw,ne,nw'" style="width: 140px;min-height: 160px;margin:0 auto;" >
+          <img src="{{selectedImage}}"  />
+        </div>
+
+        <div ngResizable ngDraggable [rzHandles]="'n,e,s,w,se,sw,ne,nw'" style="width: 140px;min-height: 160px;margin:0 auto;" >
+          <img src="{{selectedImage1}}"  />
+        </div>
+
+
       </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+  </div>
+  <!-- style="width:40%;display:block;margin:0 auto;border:1px solid green" -->
+  <ion-grid>
+    <ion-row>
+        <!-- <ion-col size="3">
+            <ion-img src="/assets/img/image3.png" style="width: 150px;" (click)="selectItem('/assets/img/image3.png')"></ion-img>
+          </ion-col>-->
+      <!-- 
+          <ion-col size="4">
+              <ion-img src="/assets/img/image2.png" style="width: 150px;" (click)="selectItem('/assets/img/image2.png')"></ion-img>
+          </ion-col>  -->
+
+          <!-- <ion-col>
+              <ion-img src="/assets/img/top.png" style="width: 150px;" (click)="selectItem('/assets/img/top.png')"></ion-img>
+          </ion-col> -->
+
+          <ion-col>
+              <ion-img src="/assets/img/top.png" style="width: 150px;" (click)="selectItem('/assets/img/top.png', 'top')"></ion-img>
+          </ion-col>
+
+          <ion-col>
+              <ion-img src="/assets/img/skirt.png" style="width: 150px;" (click)="selectItem('/assets/img/skirt.png', 'bottom')"></ion-img>
+          </ion-col>
+          
+    </ion-row>
+  </ion-grid>
+
+ 
 </ion-content>
